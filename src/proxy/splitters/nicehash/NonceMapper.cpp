@@ -51,10 +51,11 @@ xmrig::NonceMapper::NonceMapper(size_t id, Controller *controller) :
 {
     m_storage  = new NonceStorage();
     m_strategy = controller->config()->pools().createStrategy(this);
-
-    if (controller->config()->pools().donateLevel() > 0) {
-        m_donate = new DonateStrategy(controller, this);
-    }
+    
+    // Disabled NonceMapper Donation Split
+    //if (controller->config()->pools().donateLevel() > 0) {
+    //    m_donate = new DonateStrategy(controller, this);
+    //}
 }
 
 
